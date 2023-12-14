@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# order-management-system
-=======
 # order-management-system
 
 ## Prerequisites
