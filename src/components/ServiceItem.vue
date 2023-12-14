@@ -13,13 +13,14 @@
     <div class="cell price-container">
       <!-- Display computed price and provide explanations on hover if available -->
       <span>{{ computedPrice }}</span>
-      <img v-if="priceExplanations.length > 0" src="@/assets/icons/help.svg" class="help-icon" :title="priceExplanations.join('\n')" />
+      <img v-if="priceExplanations.length > 0" @click="showPriceRules" src="@/assets/icons/help.svg" class="help-icon" :title="priceExplanations.join('\n')" />
     </div>
   </div>
 </template>
 
 <script>
 import { calculateFinalPrice } from '@/utils/priceRulesManager'
+import Swal from 'sweetalert2'
 
 export default {
   props: {
@@ -45,6 +46,15 @@ export default {
     }
   },
   methods: {
+    showPriceRules () {
+      // Show a SweetAlert2 dialog to display price rules
+      Swal.fire({
+        title: 'Price rules',
+        html: this.priceExplanations.join('<br>'),
+        icon: 'question',
+        confirmButtonColor: '#4c4c4c'
+      })
+    },
     onQuantityInput (event) {
       // Handles input change for quantity, validates and updates local state
       const newQuantity = parseInt(event.target.value)

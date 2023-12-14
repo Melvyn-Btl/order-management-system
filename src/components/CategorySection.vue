@@ -14,7 +14,7 @@
       <div class="header-label price-container">
         <!-- Display computed total price and help icon with price rules -->
         <span>Price</span>
-        <img src="@/assets/icons/help.svg" class="help-icon filter-white" :title="priceRulesExplanation.join('\n')" />
+        <img @click="showPriceRules" src="@/assets/icons/help.svg" class="help-icon filter-white" :title="priceRulesExplanation.join('\n')" />
       </div>
     </div>
     <!-- Service items are displayed here if the category is expanded -->
@@ -33,6 +33,7 @@
 <script>
 import ServiceItem from './ServiceItem.vue'
 import { parseCategoryPriceRules } from '@/utils/priceRulesManager'
+import Swal from 'sweetalert2'
 
 export default {
   components: { ServiceItem }, // Import ServiceItem component
@@ -54,6 +55,15 @@ export default {
     }
   },
   methods: {
+    showPriceRules () {
+      // Show a SweetAlert2 dialog to display price rules
+      Swal.fire({
+        title: 'Price rules',
+        html: this.priceRulesExplanation.join('<br>'),
+        icon: 'question',
+        confirmButtonColor: '#4c4c4c'
+      })
+    },
     // Methods for handling component events
     handleUpdateQuantity (payload) {
       this.$emit('update-service-quantity', payload) // Emit update quantity event

@@ -6,9 +6,9 @@
 export function parseCategoryPriceRules (rules) {
   const priceRulesText = []
   rules.forEach(rule => {
-    let parsedRule = '-' + rule.ruleTag + ': ' + rule.ruleValue
+    let parsedRule = rule.ruleTag.charAt(0).toUpperCase() + rule.ruleTag.slice(1) + ': ' + rule.ruleValue
     if (rule.conditionTag === 'minimumQuantity') {
-      parsedRule += ' (if quantity greater than ' + rule.conditionValue + ')'
+      parsedRule += ' (if quantity greater than or equal to ' + rule.conditionValue + ')'
     }
     // ... Add all possible rules
 

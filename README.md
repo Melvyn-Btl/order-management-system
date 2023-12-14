@@ -31,3 +31,8 @@ npm install
 ```
 npm run serve
 ```
+
+### Lints and fixes files
+```
+npm run lint
+```
