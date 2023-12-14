@@ -1,4 +1,13 @@
-# order-management-system
+# Order management system
+
+## Overview
+
+This project is a Vue.js-based web application designed for an order management system.
+It enables users to browse, select, and order services across various categories.
+The primary focus is on frontend functionalities, including category display, service listing, cart management, and customized pricing rules.
+
+## Architecture diagram
+![Architecture Diagram](/Architecture.JPG)
 
 ## Prerequisites
 ```
@@ -26,4 +35,3 @@ npm run build
 ```
 npm run lint
 ```
->>>>>>> master
