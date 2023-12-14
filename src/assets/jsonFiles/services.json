@@ -1,0 +1,28 @@
+{
+    "services": [
+        {
+            "id": 101,
+            "name": "Service 1A",
+            "description": "Description for Service 1A",
+            "categoryId": 1
+        },
+        {
+            "id": 102,
+            "name": "Service 2A",
+            "description": "Description for Service 2A",
+            "categoryId": 1
+        },
+        {
+            "id": 201,
+            "name": "Service 1B",
+            "description": "Description for Service 1B",
+            "categoryId": 2
+        },
+        {
+            "id": 202,
+            "name": "Service 2B",
+            "description": "Description for Service 2B",
+            "categoryId": 2
+        }
+    ]
+}
