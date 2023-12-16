@@ -84,7 +84,7 @@ export default {
     border-left: 1px solid #e0e0e0;
   }
 
-  .price-container{
+  .price-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,12 +96,25 @@ export default {
     height: 30px;
     width: 30px;
     position: absolute;
-    right: 0rem;
+    right: 0;
     transition: transform 0.2s ease;
   }
 
   .help-icon:hover {
     transform: scale(1.1);
     opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .price-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .help-icon {
+      position: static;
+      order: 2;
+      margin-top: 5px;
+      margin-left: 0;
+    }
   }
 </style>
