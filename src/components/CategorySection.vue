@@ -18,7 +18,7 @@
       </div>
     </div>
     <!-- Service items are displayed here if the category is expanded -->
-    <div v-if="isExpanded">
+    <div v-show="isExpanded">
       <ServiceItem
         v-for="service in services"
         :key="service.id"
