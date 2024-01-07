@@ -47,7 +47,6 @@
 <script>
 import ServiceItem from './ServiceItem.vue'
 import TotalSection from './TotalSection.vue'
-import { calculateFinalPrice } from '@/utils/priceRulesManager'
 import Swal from 'sweetalert2'
 
 export default {
@@ -78,18 +77,7 @@ export default {
       return Object.values(this.computedPrices).reduce((acc, price) => acc + price, 0)
     }
   },
-  created () {
-    // Initialize computed prices for cart items
-    this.initializeComputedPrices()
-  },
   methods: {
-    initializeComputedPrices () {
-      // Initialize the computed prices for each item in the cart
-      this.cartItems.forEach(item => {
-        const { finalPrice } = calculateFinalPrice(this.$store.getters.applicableRules(item.service), item.service, item.quantity)
-        this.computedPrices[item.service.id] = finalPrice
-      })
-    },
     showAlert () {
       // Show success alert when an order is placed
       return Swal.fire({

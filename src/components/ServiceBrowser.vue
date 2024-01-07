@@ -4,8 +4,8 @@
     <div class="title">Services and consumables available for order.</div>
     <!-- Buttons to expand or collapse all categories -->
     <div>
-      <button @click="expandAll">Show all</button>
-      <button @click="collapseAll">Hide all</button>
+      <button class="show-all-button" @click="expandAll">Show all</button>
+      <button class="hide-all-button" @click="collapseAll">Hide all</button>
     </div>
     <!-- Loop through categories and display each using the Category component -->
     <Category
@@ -25,8 +25,8 @@
     />
     <!-- Buttons for adding items to the cart and viewing the cart -->
     <div class="buttons-container">
-      <button @click="addToCart">Add to Cart</button>
-      <button @click="viewCart">View Cart</button>
+      <button class="add-to-cart-button" @click="addToCart">Add to Cart</button>
+      <button class="view-cart-button" @click="viewCart">View Cart</button>
     </div>
   </div>
 </template>

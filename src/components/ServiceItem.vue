@@ -89,11 +89,9 @@ export default {
   },
   watch: {
     'service.quantity': function (newVal) {
-      // Watches for external changes in quantity and updates component state
-      if (!this.isCartView) {
-        this.localQuantity = newVal < 0 ? 0 : newVal
-        this.calculatePriceAndExplanations()
-      }
+      // Watches for external changes in quantity and updates component state (By clicking on “Add to cart” for example)
+      this.localQuantity = newVal < 0 ? 0 : newVal
+      this.calculatePriceAndExplanations()
     },
     computedPrice (newVal) {
       // Watches computed price changes and emits an event for parent components
